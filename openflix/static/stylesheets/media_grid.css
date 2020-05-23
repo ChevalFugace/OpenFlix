@@ -1,0 +1,274 @@
+body {
+    background-color: #020305;
+    background-image: url("/static/images/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+#main-scrollbar {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    outline: none;
+    display: block;
+}
+
+.scrollbar-track {
+
+    background: transparent !important;
+}
+
+.scrollbar-thumb {
+    
+    background: rgb(100,100,100) !important;
+}
+
+::-webkit-scrollbar {
+
+    display: none;
+}
+
+.header {
+
+    height: 50px;
+    width: 100%;
+    z-index: 20;
+    position: fixed;
+    top: 0px;
+    left: 0px;    
+    backdrop-filter: blur(50px) brightness(50%) saturate(200%);
+    box-shadow: 0px 0px 20px black ;
+    display: flex;
+    align-items: center;
+}
+
+input#search {
+
+    margin-right: 10px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    color:white;
+    border: 0;
+    padding-left: 10px;
+    font-size: 15px;
+    box-shadow: inset 0px 2px 3px rgb(0,0,0,0.7);
+    transition: width 0.2s;
+    
+    background-image: url("/static/images/magnifying-glass.svg");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+}
+
+input#search:focus {
+
+    width: 400px;
+    background-image: none;
+}
+
+input:focus, textarea:focus {
+
+    outline: none;
+}
+
+#video_grid_view {
+
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* #video_grid_view::after {
+
+    content: "";
+    flex: auto;
+} */
+
+.video_grid_item {
+
+    margin: 10px;
+    width: 165px;
+    height: 247.5px;
+}
+
+.video_grid_item_container {
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    opacity: 0;
+    transform: scale(0.5);  
+    transition: opacity .5s, transform .2s;
+    -webkit-transition: opacity .5s, transform .2s;
+
+}
+
+.video_grid_item_container:hover {
+    
+    z-index: 1;
+}
+
+.video_info, .poster, .hover_area, .poster_button {
+
+    width: 100%;
+    height: 100%;
+}
+
+.poster_button {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 0;
+    z-index: 5;
+}
+
+.hover_area {
+
+    box-shadow: 0px 10px 15px black;
+
+    transition: transform .2s;
+    -webkit-transition: transform .2s;
+    ;
+}
+
+.hover_area:hover {
+    
+    z-index: 1;
+    cursor: pointer;
+    transform: scale(1.2); 
+}
+
+.video_info {
+
+    font-family: montserratSemiBold,Arial,Sans-Serif;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: opacity .2s;
+    color: white;
+    background-color: rgba(0,0,0,0.9);
+    position: absolute;
+    padding-top: auto;
+    margin-top: auto;
+    top: 0;
+    left: 0;
+    opacity: 0%;
+    
+    vertical-align: middle;
+}
+
+.video_info .info {
+    
+    text-transform: uppercase;
+    position: absolute;
+    width: calc(100% - 10px);
+    top: 50px;
+    left: 5px;
+    vertical-align: middle;
+    text-align: center;
+} 
+
+.video_info .info .year {
+
+    margin-top: 10px;
+    position: relative;
+    scale: 120%;
+}
+
+.video_info:hover {
+
+    z-index: 20;
+    display: block;
+    opacity: 100%;
+}
+
+.rating {
+
+    unicode-bidi: bidi-override;
+    position: absolute;
+    left: 50%;
+    bottom: 1em;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.empty-rating {
+    
+    padding: 0;
+    z-index: 0;
+    color: rgba(255,255,255,0.3);
+    position: absolute;
+    transform:translate(-50%, 0);
+    top: 0;
+    left: 0;
+}
+
+.fill-rating {
+
+    padding: 0;
+    z-index: 1;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    /* width: 0; */
+}
+
+.tab_container input[type="radio"] {
+
+    position: absolute;
+    visibility: hidden;
+    display: none;
+}
+
+.tab_container label {
+
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 26px;
+    height: 100%;
+    width: 6em;
+}
+
+input[type=radio]:checked + label{
+
+    background-color: rgba(255,255,255,0.3);
+}
+
+.tab_container {
+
+    font-family: montserratSemiBold,Arial,Sans-Serif;
+    color: white;
+    text-align: center;
+    border: solid 2px rgba(255,255,255,0.3);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+    height: 26px;
+    /* transform: translate(100px, 0px); */
+}
+
+.header .header_controls {
+
+    width: 215px;
+}

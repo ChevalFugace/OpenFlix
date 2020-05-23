@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript" src="/js/smooth-scrollbar.js"></script>
+    <script type="text/javascript" src="/js/overscroll.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="/js/socket.io.min.js"></script>
+    <script type="text/javascript" src="/js/media_grid.js"></script>
+    
+    {% if debug %}
+        <script type="text/javascript" src="/js/live_reload.js"></script>
+    {% endif %}
+
+    <template id="grid_item_template">
+        <div class="video_grid_item">
+            <div class="video_grid_item_container">
+                <div class="hover_area">
+                    <img src="" class="poster" onload="fadeIn(this)">
+                    <div class="video_info">
+                        <form action="" method="GET">
+                            <input class="poster_button" type="submit" name="id" value=""/>
+                        </form>
+                        <div class="info">
+                            <div class="title"></div>
+                            <div class="year"></div>
+                        </div>
+                        <div class="rating">
+                            <div class="empty-rating">
+                                ★★★★★
+                                <div class="fill-rating">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <head>
+        <title>OpenFlix</title>
+        <link rel="stylesheet" href="/static/stylesheets/media_grid.css"/>
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="header_controls">
+                
+            </div>
+            <div class="tab_container" id="video_type">
+                <input id="movie_tab" name="video_type_tab" value="movie" onChange="state_change(event)" type="radio" checked />
+                <label for="movie_tab">movie</label>
+                <input id="show_tab" name="video_type_tab" value="show" onChange="state_change(event)" type="radio"/>
+                <label for="show_tab">tv show</label>
+            </div>
+            <input type="search" id="search" placeholder="search" autocomplete="off" onkeyup="state_change(event)" onsearch="state_change(event)"/>
+        </div>
+        <main id="main-scrollbar" data-scrollbar>
+            <div id="video_grid_view">
+
+            </div>
+        </main>
+    </body>
+</html>

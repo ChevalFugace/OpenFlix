@@ -1,0 +1,12 @@
+/bin
+__pycache__
+*.log
+*.key
+*.db
+.VSCodeCounter
+.vscode
+localhost.cfg
+chromedriver
+/openflix.egg-info
+/dist
+/build

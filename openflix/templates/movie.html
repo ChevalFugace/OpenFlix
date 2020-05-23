@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="/js/socket.io.min.js"></script>
+    <script type="text/javascript" src="/js/movie.js"></script>
+    {% if debug %}
+        <script type="text/javascript" src="/js/live_reload.js"></script>
+    {% endif %}
+
+    <head>
+        <title>OpenFlix</title>
+        <link rel="stylesheet" href="/static/stylesheets/media_info.css"/>
+    </head>
+
+    <body>
+        <div class="backdrop_header">
+            <img class="backdrop_image" src="">
+            <div class="info_overlay">
+                <!-- <img class="poster" src=""> -->
+                <h1 class="title"></h1>
+                <p class="overview"></p>
+            </div>
+        </div>
+        <div class=video-container>
+            
+            <embed type="application/x-vlc-plugin" width="640" height="480" target="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4" />
+        </div>
+    </body>
+</html>
